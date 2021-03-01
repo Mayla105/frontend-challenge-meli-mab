@@ -1,15 +1,14 @@
 import React from 'react';
 
-function SearchingBox(props) {
-  
+const SearchingBox = () => {
   return (
     <React.Fragment>
-      <header className='nav-header'>
+      <header className='nav-header nav-header-plus'>
         <div className='nav-bounds'>
           <a className='nav-logo' href='/' tabIndex='2'>
             Mercado Libre
           </a>
-          <form>
+          <form className='nav-search'>
             <input
               type='text'
               placeholder='Nunca dejes de buscar'
@@ -23,6 +22,6 @@ function SearchingBox(props) {
       </header>
     </React.Fragment>
   );
-}
+};
 
 export default SearchingBox;
