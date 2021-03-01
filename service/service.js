@@ -12,8 +12,7 @@ const author = {
 
 exports.getItemsList = (query) => {
   return search(query).then((response => {
-      const categories = response.filters.length && response.filters[0].values ?
-      response.filters[0].values[0].path_from_root.map((elem) => elem.name) : [];
+      const categories = filterCategories(response.filters);
       const items = filterItems(response.results);
       return {
         author,
