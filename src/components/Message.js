@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Message = (props) => {
-   return 'error component'
+  return <div>
+    <p>{props.message}</p>
+  </div>;
 };
 
 Message.propTypes = { 
