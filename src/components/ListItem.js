@@ -27,8 +27,7 @@ const ListItem = ({ info, categories }) => {
               pathname: `/items/${info.id}`,
               itemInfo: info,
               categories: categories,
-            }}
-          >
+            }}>
             <p>{info.title}</p>
           </Link>
         </div>
