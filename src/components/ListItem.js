@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import * as utils from '../utils';
+import * as utils from '../utils/utils';
 
 const ListItem = ({ info, categories }) => {
   return (

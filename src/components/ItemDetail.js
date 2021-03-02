@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import * as utils from '../utils';
+import * as utils from '../utils/utils';
 import Breadcrumb from './Breadcrumb';
 import Message from './Message';
 import Loader from './Loader';
