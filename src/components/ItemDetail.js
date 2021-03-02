@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import * as utils from '../utils';
+import Breadcrumb from './Breadcrumb';
 import Message from './Message';
 import Loader from './Loader';
 
-function ItemDetail(props) {
-
+const ItemDetail = (props) => {
   const id = props.match.params.id;
   const [itemInfo, setItemInfo] = useState({});
   const [errorMsg, showErrorMsg] = useState({error: false, text: ''});
@@ -32,6 +32,7 @@ function ItemDetail(props) {
 
   return errorMsg.error ? <Message error={errorMsg.error} message={errorMsg.text} /> :
     itemInfo.id ? <div>
+      <Breadcrumb categories={props.categories}/>
       <div>
         <div>
           <img src={itemInfo.picture} alt={itemInfo.title}/>
@@ -54,7 +55,7 @@ function ItemDetail(props) {
         <p>{itemInfo.description}</p>
       </div>
     </div> : <Loader />;
-}
+};
 
 ItemDetail.propTypes = {
   match: PropTypes.shape({
@@ -62,6 +63,7 @@ ItemDetail.propTypes = {
       id: PropTypes.string.isRequired,
     }),
   }),
+  categories: PropTypes.array
 };
 
 export default ItemDetail;
