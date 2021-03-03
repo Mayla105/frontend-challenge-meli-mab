@@ -1,20 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ListItem from './ListItem';
-import Breadcrumb from './Breadcrumb';
-//TODO pagination
+
 const SearchResultList = (props) => {
+  console.log(props.categories);
   return <div className='container justify-content-center'>
     <div className='row d-flex justify-content-center'>
       <div className='col-8'>
-        <Breadcrumb categories={props.categories}/>
-        <div className='list-item-container'>
-          {props.items.map((item, idx) => <ListItem key={idx} info={item} categories={props.categories}/>)}
+        <div className='list-item-container mb-5 pb-0'>
+          {props.items.slice(0,4).map((item, idx) => <ListItem key={idx} info={item} categories={props.categories}/>)}
         </div>
       </div>
     </div>
-    
-    
   </div>;
 };
 

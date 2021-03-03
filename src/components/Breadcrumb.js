@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Breadcrumb = (props) =>{
-  console.log(props);
   return <div className='categories-breadcrum'>
     <ul className={'breadcrumb-container'}>
       {props.categories ? props.categories.map((category, idx) =>

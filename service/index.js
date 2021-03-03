@@ -5,7 +5,6 @@ const service = require('./service');
 const app = express();
 app.use(cors());
 
-//TODO req.query.q
 app.get('/api/items', (req, res) => {
   service.getItemsList(req.query.q)
     .then(items => res.json(items))
