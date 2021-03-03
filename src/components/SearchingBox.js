@@ -12,22 +12,27 @@ const SearchingBox = (props) => {
 
   return (
     <React.Fragment>
-      <header className='nav-header nav-header-plus'>
-        <div className='nav-bounds'>
-          <a className='nav-logo' href='/' tabIndex='2'>
-            Mercado Libre
-          </a>
-          <form className='nav-search' onSubmit={(event) => handleSubmit(event)}>
-            <input
-              type='text'
-              placeholder='Nunca dejes de buscar'
-              name='search'
-              className='nav-search-input'
-              onKeyUp={(e) => setQuery(e.target.value)}/>
-            <button type='submit' className='nav-search-btn' tabIndex='3'>
-              <div className='nav-icon-search' aria-label='Buscar'></div>
-            </button>
-          </form>
+      <header className='serach-container container-fluid'>
+        <div className='search-bounds flex-row align-content-center'>
+          <div className='col-10 d-flex justify-content-center'>
+            <div className='col-2 p-1 mr-3 d-flex justify-content-center'>
+              <a className='logo mt-2' href='/' tabIndex='2'></a>
+            </div>
+            <div className='col-7'>
+              <form className='form-search' onSubmit={(event) => handleSubmit(event)}>
+                <input
+                  type='text'
+                  placeholder='Nunca dejes de buscar'
+                  name='search'
+                  className='search-input'
+                  onKeyUp={(e) => setQuery(e.target.value)}/>
+                <button type='submit' className='nav-search-btn' tabIndex='3'>
+                  <div className='nav-icon-search' aria-label='Buscar'></div>
+                </button>
+              </form>
+            </div>
+            
+          </div>
         </div>
       </header>
     </React.Fragment>

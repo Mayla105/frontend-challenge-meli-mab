@@ -1,0 +1,61 @@
+.serach-container {
+  display:block;
+  background-color: rgba($color-main, 0.7);
+  width: 100%;
+  height: 70px;
+  -webkit-box-shadow: 0 1px 0 0 rgba(0,0,0,.1);
+  box-shadow: 0 1px 0 0 rgba(0,0,0,.1);
+}
+
+.search-bounds {
+  display: flex;
+  flex-grow: inherit;
+  height: auto;
+  justify-content: center;
+  padding-top: 5px;
+}
+
+@mixin box-shadow {
+  -webkit-box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+}
+
+.form-search {
+  padding: 8px 1px;
+  overflow: auto;
+  height: 56px;
+  position: relative;
+  z-index: 910;
+  will-change: left;
+  -webkit-transition: left .15s ease-out;
+  transition: left .15s ease-out;
+}
+
+.search-input {
+  height: 39px;
+  width: 100%;
+  padding: 7px 60px 9px 15px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  background-color: rgba(255,255,255,.9);
+  position: relative;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 0 rgba(0,0,0,.2);
+  color: #333;
+  font-size: 16px;
+  font-family: $lato-light;
+  &:focus {
+    outline: none !important;
+  }
+}
+
+.logo {
+  background-image: url(https://http2.mlstatic.com/frontend-assets/ui-navigation/5.14.1/mercadolibre/logo__large_plus.png);
+  height: 34px;
+  width: 134px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  outline: 0;
+  display: inline-block;
+}
