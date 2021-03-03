@@ -4,9 +4,17 @@ import ListItem from './ListItem';
 import Breadcrumb from './Breadcrumb';
 //TODO pagination
 const SearchResultList = (props) => {
-  return <div>
-    <Breadcrumb categories={props.categories}/>
-    {props.items.map((item, idx) => <ListItem key={idx} info={item} categories={props.categories}/>)}
+  return <div className='container justify-content-center'>
+    <div className='row d-flex justify-content-center'>
+      <div className='col-8'>
+        <Breadcrumb categories={props.categories}/>
+        <div className='list-item-container'>
+          {props.items.map((item, idx) => <ListItem key={idx} info={item} categories={props.categories}/>)}
+        </div>
+      </div>
+    </div>
+    
+    
   </div>;
 };
 

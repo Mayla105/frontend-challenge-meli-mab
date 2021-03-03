@@ -5,33 +5,38 @@ import * as utils from '../utils/utils';
 
 const ListItem = ({ info, categories }) => {
   return (
-    <div>
-      <div id={info.id}>
-        <Link
-          to={{
-            pathname: `/items/${info.id}`,
-            itemInfo: info,
-            categories: categories,
-          }}
-        >
-          <img width='160' height='160' src={info.picture} alt={info.title} />
-        </Link>
-        <div>
-          <p>
-            {utils.priceFormatter(info.price)}
-            {info.price.decimals ? <span>,{info.price.decimals}</span> : null}
-          </p>
-          {info.free_shipping ? <small>Envio gratis</small> : null}
+    <div className='container d-flex item-container'>
+      <div className='row flex-grow-1'>
+        <div className='col-auto'>
           <Link
             to={{
               pathname: `/items/${info.id}`,
               itemInfo: info,
               categories: categories,
-            }}>
-            <p>{info.title}</p>
+            }}
+          >
+            <img width='160' height='160' src={info.picture} alt={info.title} />
           </Link>
         </div>
-        <div>
+        
+        <div className='col-7 p-3'>
+          <h3 className='price-title'>
+            {utils.priceFormatter(info.price)}
+            {info.price.decimals ? <span>,{info.price.decimals}</span> : null}
+          </h3>
+          {info.free_shipping ? <small>Envio gratis</small> : null}
+          <h4 className='item-detail-title'>
+            <Link
+              to={{
+                pathname: `/items/${info.id}`,
+                itemInfo: info,
+                categories: categories,
+              }}>
+              {info.title}
+            </Link>
+          </h4>
+        </div>
+        <div className='col-2 p-4'>
           <p>{info.condition === 'new' ? 'Nuevo' : 'Usado'}</p>
         </div>
       </div>
