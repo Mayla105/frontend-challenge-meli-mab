@@ -27,7 +27,7 @@ const SearchingBox = (props) => {
                   className='search-input col-auto'
                   onKeyUp={(e) => setQuery(e.target.value)}/>
                 <button type='submit' className='search-button'>
-                  <div className='nav-icon-search' aria-label='Buscar'></div>
+                  <i className="fas fa-search"></i>
                 </button>
               </form>
             </div>
