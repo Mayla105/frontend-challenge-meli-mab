@@ -35,7 +35,7 @@ function App() {
       .catch(error => {
         console.error(error);
         setIsLoading(false);
-        setResults({ error: 'An error ocurred' });
+        setResults({ error: 'Ocurrio un error inesperado' });
       });
   };
 
