@@ -6,6 +6,8 @@ import ItemDetail from './components/ItemDetail';
 
 import Loader from './components/Loader';
 import Message from './components/Message';
+import './App.scss';
+
 
 const API = 'http://localhost:5000/api';
 
@@ -16,6 +18,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
 
   const getSearchResults = query => {
+    setIsLoading(true);
     fetch(`${API}/items?q=${query}`)
       .then(response => response.json())
       .then(response => {
@@ -25,8 +28,8 @@ function App() {
           setResults({ error: response });
         } else {
           setResults(response);
-          setIsLoading(false);
           history.push(`/items?search=${query}`);
+          setIsLoading(false);
         }
       })
       .catch(error => {

@@ -3,13 +3,15 @@ import PropTypes from 'prop-types';
 
 const Breadcrumb = (props) =>{
   console.log(props);
-  return <ul className={'breadcrumb-container'}>
-    {props.categories ? props.categories.map((category, idx) =>
-      <span key={idx}>{category}
-        {idx !== props.categories.length - 1 ? ' > ' : null}
-      </span>)
-      : null}
-  </ul>;
+  return <div className='categories-breadcrum'>
+    <ul className={'breadcrumb-container'}>
+      {props.categories ? props.categories.map((category, idx) =>
+        <span key={idx}>{category}
+          {idx !== props.categories.length - 1 ? ' > ' : null}
+        </span>)
+        : null}
+    </ul>
+  </div>;
 };
 
 Breadcrumb.propTypes = {
