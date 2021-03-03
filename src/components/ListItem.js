@@ -19,7 +19,7 @@ const ListItem = ({ info, categories }) => {
           </Link>
         </div>
         
-        <div className='col-7 p-3'>
+        <div className='col-md-7 p-3'>
           <h3 className='price-title'>
             {utils.priceFormatter(info.price)}
             {info.price.decimals ? <span>,{info.price.decimals}</span> : null}
@@ -36,7 +36,7 @@ const ListItem = ({ info, categories }) => {
             </Link>
           </h4>
         </div>
-        <div className='col-2 p-4'>
+        <div className='col-lg-2 p-4'>
           <p>{info.condition === 'new' ? 'Nuevo' : 'Usado'}</p>
         </div>
       </div>

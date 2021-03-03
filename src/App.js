@@ -7,6 +7,7 @@ import ItemDetail from './components/ItemDetail';
 import Loader from './components/Loader';
 import Message from './components/Message';
 import './App.scss';
+import Breadcrumb from './components/Breadcrumb';
 
 
 const API = 'http://localhost:5000/api';
@@ -42,6 +43,7 @@ function App() {
   return (
     <div className='App'>
       <SearchingBox onSubmit={query => getSearchResults(query)} />
+      <Breadcrumb categories={results.categories}/>
       {isLoading ? (
         <Loader />
       ) : (
@@ -70,7 +72,7 @@ function App() {
               <Redirect to={'/'} />
             )}
           </Route>
-          <Route path='/items/:id' categories={results.categories} component={ItemDetail} />
+          <Route path='/items/:id' component={ItemDetail} />
         </Switch>
       )}
     </div>

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import * as utils from '../utils/utils';
-import Breadcrumb from './Breadcrumb';
 import Message from './Message';
 import Loader from './Loader';
 
@@ -32,15 +31,14 @@ const ItemDetail = (props) => {
 
   return errorMsg.error ? <Message error={errorMsg.error} message={errorMsg.text} /> :
     itemInfo.id ? <div>
-      <Breadcrumb categories={props.categories}/>
       <div className='container'>
         <div className='row d-flex justify-content-center'>
-          <div className='col-8'>
-            <div className='row d-flex item-detail-container' >
-              <div className='col-8'>
+          <div className='col-lg-9 col-xl-8'>
+            <div className='row d-flex item-detail-container'>
+              <div className='col-lg-8'>
                 <img width='400' height='400' src={itemInfo.picture} alt={itemInfo.title}/>
               </div>
-              <div className='col-4 justify-content-center'>
+              <div className='col-lg-4 justify-content-center'>
                 <p>
                   {`${itemInfo.condition === 'new' ? 'Nuevo' : 'Usado'} - ${itemInfo.sold_quantity} vendidos`}
                 </p>
@@ -59,7 +57,7 @@ const ItemDetail = (props) => {
                 </div>
               </div>
               <div className='row item-description-container'>
-                <div className='col-10'>
+                <div className='col-lg-10'>
                   <h3 className='description-title'>Descripción del producto</h3>
                   <p className='description-body'>{itemInfo.description}</p>
                 </div>
