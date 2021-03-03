@@ -33,26 +33,41 @@ const ItemDetail = (props) => {
   return errorMsg.error ? <Message error={errorMsg.error} message={errorMsg.text} /> :
     itemInfo.id ? <div>
       <Breadcrumb categories={props.categories}/>
-      <div>
-        <div>
-          <img src={itemInfo.picture} alt={itemInfo.title}/>
+      <div className='container'>
+        <div className='row d-flex justify-content-center'>
+          <div className='col-8'>
+            <div className='row d-flex item-detail-container' >
+              <div className='col-8'>
+                <img width='400' height='400' src={itemInfo.picture} alt={itemInfo.title}/>
+              </div>
+              <div className='col-4 justify-content-center'>
+                <p>
+                  {`${itemInfo.condition === 'new' ? 'Nuevo' : 'Usado'} - ${itemInfo.sold_quantity} vendidos`}
+                </p>
+                <div>
+                  <h3 className='item-detail-title'>{itemInfo.title}</h3>
+                </div>
+                <div className='d-flex my-3'>
+                  <h1 className='item-detail-title-price'>
+                    {utils.priceFormatter(itemInfo.price)}
+                  </h1>
+                  {itemInfo.price.decimals ?
+                    <span className='price-decimals'>{itemInfo.price.decimals}</span> : null}
+                </div>
+                <div className='button-container'>
+                  <button className="buy-button">Comprar</button>
+                </div>
+              </div>
+              <div className='row item-description-container'>
+                <div className='col-10'>
+                  <h3 className='description-title'>Descripción del producto</h3>
+                  <p className='description-body'>{itemInfo.description}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
         </div>
-        <div>
-          <p>
-            {`${itemInfo.condition === 'new' ? 'Nuevo' : 'Usado'} - ${itemInfo.sold_quantity} vendidos`}
-          </p>
-          <h5>{itemInfo.title}</h5>
-          <h3>
-            {utils.priceFormatter(itemInfo.price)}
-            {itemInfo.price.decimals ?
-              <span>,{itemInfo.price.decimals}</span> : null}
-          </h3>
-          <button>Comprar</button>
-        </div>
-      </div>
-      <div>
-        <p>Descripción del producto</p>
-        <p>{itemInfo.description}</p>
       </div>
     </div> : <Loader />;
 };
