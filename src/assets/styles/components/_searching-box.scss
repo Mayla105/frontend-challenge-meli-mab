@@ -50,8 +50,25 @@
   }
 }
 
+.search-button {
+  height: 39px;
+  padding-top: 2px;
+  -webkit-border-radius: 0 2px 2px 0;
+  border-radius: 0 2px 2px 0;
+  width: 46px;
+  border: 0 rgba(0,0,0,.2);
+  border-left: 1px solid #ebe5e5 !important;
+  background-color: #fff;
+  top: 8px;
+  right: 1px;
+  position: absolute;
+  padding: 0;
+  font-size: 20px;
+  color: #666;
+}
+
 .logo {
-  background-image: url(https://http2.mlstatic.com/frontend-assets/ui-navigation/5.14.1/mercadolibre/logo__large_plus.png);
+  background-image: url('../../images/logo.png');
   height: 34px;
   width: 134px;
   background-repeat: no-repeat;

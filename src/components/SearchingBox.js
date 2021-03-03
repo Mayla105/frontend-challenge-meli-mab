@@ -14,11 +14,11 @@ const SearchingBox = (props) => {
     <React.Fragment>
       <header className='serach-container container-fluid'>
         <div className='search-bounds flex-row align-content-center'>
-          <div className='col-10 d-flex justify-content-center'>
+          <div className='col-12 col-lg-8 d-flex justify-content-center'>
             <div className='col-2 p-1 mr-3 d-flex justify-content-center'>
               <a className='logo mt-2' href='/' tabIndex='2'></a>
             </div>
-            <div className='col-7'>
+            <div className='col-8'>
               <form className='form-search' onSubmit={(event) => handleSubmit(event)}>
                 <input
                   type='text'
@@ -26,7 +26,7 @@ const SearchingBox = (props) => {
                   name='search'
                   className='search-input'
                   onKeyUp={(e) => setQuery(e.target.value)}/>
-                <button type='submit' className='nav-search-btn' tabIndex='3'>
+                <button type='submit' className='search-button' tabIndex='3'>
                   <div className='nav-icon-search' aria-label='Buscar'></div>
                 </button>
               </form>
